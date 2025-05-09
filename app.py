@@ -3,6 +3,7 @@ from multiapp import MultiApp
 from apps import market, articles, chatbot
 
 
+
 app = MultiApp()
 
 css_style = """
