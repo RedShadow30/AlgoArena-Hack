@@ -1,4 +1,5 @@
 import streamlit as st
+st.set_page_config(page_title="KindBites", page_icon="🍽️", layout="centered")
 from multiapp import MultiApp
 from apps import market, articles, chatbot
 

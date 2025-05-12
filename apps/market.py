@@ -7,7 +7,7 @@ import pymongo
 import base64
 from urllib.parse import quote_plus
 
-st.set_page_config(page_title="KindBites", page_icon="🍽️", layout="wide")
+#st.set_page_config(page_title="KindBites", page_icon="🍽️", layout="wide")
 
 @st.cache_resource
 def init_connection():
