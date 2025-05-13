@@ -17,7 +17,7 @@ st.markdown("# Welcome to KindBites 🍜🍕🍫")
 l_col, c_col, r_col = st.columns([1, 7, 7])
 
 with c_col:
-  st.image("FoodShelter.jpg", caption="Credit: Getty Images, Copyright: Steve Debenport", width=500)
+  st.image("pages/images/FoodShelter.jpg", caption="Credit: Getty Images, Copyright: Steve Debenport", width=500)
 
 st.markdown("""
 KindBites turns food waste into hope. We connect restaurants with surplus meals to people in need—using AI to ensure safety, trust, and speed. 
