@@ -4,3 +4,4 @@ apps/__pycache__/
 venv/
 .venv/
 .DS_Store
+.streamlit/secrets.toml
