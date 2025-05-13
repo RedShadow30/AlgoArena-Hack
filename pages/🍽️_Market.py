@@ -7,11 +7,12 @@ import pymongo
 import base64
 from urllib.parse import quote_plus
 
-st.set_page_config(page_title="KindBites", page_icon="🍽️", layout="wide")
+st.set_page_config(page_title="KindBites Market", page_icon="🍽️", layout="wide")
+st.sidebar.text("Made with ❤️‍🔥 by KindBites Team")
 
 @st.cache_resource
 def init_connection():
-    return pymongo.MongoClient("mongodb+srv://finding:nemo@algoarena-cluster.mzcfclp.mongodb.net/")
+    return pymongo.MongoClient(st.secrets["mongo"]["URI"])
 
 client = init_connection()
 
@@ -186,9 +187,3 @@ def app():
 
 if __name__ == "__main__":
     app()
-
-
-
-        
-
-

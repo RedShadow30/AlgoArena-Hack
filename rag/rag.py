@@ -1,4 +1,5 @@
 import re
+import streamlit as st
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.embeddings.fastembed import FastEmbedEmbeddings
@@ -8,11 +9,8 @@ from langchain.prompts import PromptTemplate
 from langchain_community.llms import ollama
 from langchain.chains import RetrievalQA
 
-#langchain-mongodb
-#langchain-ollama
-
 # Create client and collection for mongo connection
-client = MongoClient("mongodb+srv://finding:nemo@algoarena-cluster.mzcfclp.mongodb.net/")
+client = MongoClient(st.secrets["mongo"]["URI"])
 db = client["vector-store"]
 collection = client["vector-store"]["embeddings"]
 
@@ -67,3 +65,6 @@ qa = RetrievalQA.from_chain_type(
 
 def get_answer(question):
     return qa.invoke(question)["result"]
+
+
+# Article Citation: https://www.fourth.com/article/how-much-food-restaurants-waste

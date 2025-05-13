@@ -4,6 +4,7 @@ from streamlit_extras.colored_header import colored_header
 from streamlit_extras.add_vertical_space import add_vertical_space
 
 st.set_page_config(page_title="Chatbot", page_icon="🤖", layout="wide")
+st.sidebar.text("Made with ❤️‍🔥 by KindBites Team")
 
 import rag.rag as rag
 
@@ -24,7 +25,8 @@ def app():
         
         with chat_container:
             with st.chat_message("assistant"):
-                st.write("Hey there! What questions do you have about food sustainability?")
+                st.write("Hey there! I'm Jarvis. 😎")
+                st.write("What questions do you have about food sustainability?")
         
             # Display chat history on app rerun
             for message in st.session_state.messages:
@@ -53,3 +55,6 @@ def app():
 
             # Add assistant message to chat history
             st.session_state.messages.append({"role": "assistant", "content": response})
+
+if __name__ == "__main__":
+    app()
