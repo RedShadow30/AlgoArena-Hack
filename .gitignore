@@ -2,4 +2,4 @@ __pycache__
 apps/__pycache__
 .streamlit
 venv
-
+.streamlit/secrets.toml
