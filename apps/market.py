@@ -7,7 +7,7 @@ import pymongo
 import base64
 from urllib.parse import quote_plus
 
-st.set_page_config(page_title="KindBites", page_icon="🍽️", layout="wide")
+#st.set_page_config(page_title="KindBites", page_icon="🍽️", layout="wide")
 
 @st.cache_resource
 def init_connection():
@@ -42,8 +42,6 @@ def app():
         st.session_state.image_data = None
     if "selected_address" not in st.session_state:
         st.session_state.selected_address = None
-    if "selected_company" not in st.session_state:
-        st.session_state.selected_company = None
 
     left_col, center_col, right_col = st.columns([1.5, 2, 1.5], gap="large")
 
@@ -144,7 +142,7 @@ def app():
                     st.image(base64_to_image(item["image_base64"]), use_container_width=True)
 
                 st.write(f"**Quantity:** {item.get('quantity', 'N/A')}")
-                st.write(f"**Prediction:** {item.get('description', 'No description available.')}")
+                st.write(f"**Description:** {item.get('description', 'No description available.')}")
 
                 if item.get("contains_allergen") or item.get("contains_lactose"):
                     st.markdown("### ⚠️ Allergen Info")
@@ -160,18 +158,15 @@ def app():
 
                 if st.button("📍 Get Me Directions", key=f"dir_{item['_id']}"):
                     st.session_state.selected_address = item.get("address")
-                    st.session_state.selected_company = item.get("company", "Pickup Location")
 
     # ---------------- RIGHT: Map / Routing ----------------
     with right_col:
-        st.subheader("🗺️ View Location")
+        st.subheader("🗺️ Fastest Route")
 
         if st.session_state.selected_address:
-            company = st.session_state.get("selected_company", "Pickup Location")
-            st.markdown(f"### 📍 Pick-Up Location for {company}")
-
-            api_key = st.secrets["google_maps"]["api_key"]
+            api_key = "AIzaSyASfZLYRJsxaThiO-MJ_HqFnlDCY47pNiQ"  
             embed_url = f"https://www.google.com/maps/embed/v1/place?key={api_key}&q={quote_plus(st.session_state.selected_address)}"
+            st.markdown("### 📍 Directions to Selected Pickup Location")
             st.components.v1.html(
                 f"""
                 <iframe
@@ -187,7 +182,7 @@ def app():
             )
             st.info(f"Directions for: {st.session_state.selected_address}")
         else:
-            st.image("https://via.placeholder.com/300x250.png?text=Map+Coming+Soon", caption="Select an Item from the Market to View Location", use_container_width=True)
+            st.image("https://via.placeholder.com/300x250.png?text=Map+Coming+Soon", caption="Route Map", use_container_width=True)
 
 if __name__ == "__main__":
     app()
