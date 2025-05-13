@@ -1,37 +1,40 @@
 import streamlit as st
 
+st.set_page_config(page_title="Articles", page_icon="📰", layout="wide")
+st.sidebar.text("Made with ❤️‍🔥 by KindBites Team")
+
 def app():
     st.title("Food Spoilage Tips")
     st.markdown("""
-<style>
-html, body, .stApp {
-    background-color: black !important;
-}
-[data-testid="stAppViewContainer"] {
-    background-color: black !important;
-}
-.css-1y4p8pa {
-    background-color: black !important;
-}
-[data-testid="stSidebar"] {
-    background-color: #262730 !important;
-}
-div.stButton > button {
-    background-color: transparent;
-    color: white;
-    border: 2px solid white;
-    border-radius: 10px;
-    height: 50px;
-    width: 100%;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-div.stButton > button:hover {
-    background-color: #858585;
-    color: black;
-}
-</style>
-""", unsafe_allow_html=True)
+        <style>
+        html, body, .stApp {
+            background-color: black !important;
+        }
+        [data-testid="stAppViewContainer"] {
+            background-color: black !important;
+        }
+        .css-1y4p8pa {
+            background-color: black !important;
+        }
+        [data-testid="stSidebar"] {
+            background-color: #262730 !important;
+        }
+        div.stButton > button {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            border-radius: 10px;
+            height: 50px;
+            width: 100%;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        div.stButton > button:hover {
+            background-color: #858585;
+            color: black;
+        }
+        </style>
+    """, unsafe_allow_html=True)
 
     col1, col2, col3, col4 = st.columns(4)
     with col1:
@@ -65,7 +68,7 @@ div.stButton > button:hover {
             st.write("- Dull or faded colors can also signal a loss of nutrients or spoilage")
             st.write("- Yellowing greens like kale suggest aging or improper storage")
         with col2:
-            st.image("apps/images/produce/yellowing_kale.jpg", caption="Yellowing kale", use_container_width=True)
+            st.image("pages/images/produce/yellowing_kale.jpg", caption="Yellowing kale", use_container_width=True)
 
     # Smell
         st.markdown("""
@@ -76,7 +79,7 @@ div.stButton > button:hover {
 
         col3, col4 = st.columns(2)
         with col3:
-            st.image("apps/images/produce/onion_odor.jpg", caption="Rotten onion", use_container_width=True)
+            st.image("pages/images/produce/onion_odor.jpg", caption="Rotten onion", use_container_width=True)
         with col4:
             st.write("- Sour, rotten, rancid, or fermented smells usually mean microbial activity has begun")
             st.write("- Strong off-odors are one of the clearest signs that the food should be discarded")
@@ -95,7 +98,7 @@ div.stButton > button:hover {
             st.write("- Apples, oranges, grapefruit, pears etc. lose moisture causing them to shrivel")
             st.write("- The surface may feel sticky or soft instead of firm")
         with col6:
-            st.image("apps/images/produce/apple_texture.jpg", caption="Shriveled apple", use_container_width=True)
+            st.image("pages/images/produce/apple_texture.jpg", caption="Shriveled apple", use_container_width=True)
 
     # Taste
         st.markdown("""
@@ -106,7 +109,7 @@ div.stButton > button:hover {
 
         col7, col8 = st.columns(2)
         with col7:
-            st.image("apps/images/produce/spinach_taste.jpeg", caption="Rotten spinach", use_container_width=True)
+            st.image("pages/images/produce/spinach_taste.jpeg", caption="Rotten spinach", use_container_width=True)
         with col8:
             st.write("- A bitter, sour, or rancid flavor can indicate the presence of spoilage bacteria or oxidation")
             st.write("- Taste changes often occur before visible spoilage")
@@ -125,7 +128,7 @@ div.stButton > button:hover {
             st.write("- While sometimes harmless, it can also signal a breakdown in freshness over time")
             st.write("- Browning can progress to spoilage if left unrefrigerated")
         with col10:
-            st.image("apps/images/produce/browning_apple.jpeg", caption="Apple browning due to oxidation", use_container_width=True)
+            st.image("pages/images/produce/browning_apple.jpeg", caption="Apple browning due to oxidation", use_container_width=True)
 
     # Mold Growth
         st.markdown("""
@@ -136,7 +139,7 @@ div.stButton > button:hover {
 
         col11, col12 = st.columns(2)
         with col11:
-            st.image("apps/images/produce/strawberry_mold.jpg", caption="Mold growing on strawberries", use_container_width=True)
+            st.image("pages/images/produce/strawberry_mold.jpg", caption="Mold growing on strawberries", use_container_width=True)
         with col12:
             st.write("- Mold appears as a fuzzy or velvety coating, often starting at the surface")
             st.write("- It can be green, black, white, or even blue, depending on the mold species and food type")
@@ -155,7 +158,7 @@ div.stButton > button:hover {
             st.write("- It can cause fermentation, producing gas bubbles or a yeasty odor")
             st.write("- Spoiled fruits, fruit juices, or jams are common examples of visible yeast growth")
         with col14:
-            st.image("apps/images/produce/jam_yeast.jpg", caption="Yeast in jam", use_container_width=True)
+            st.image("pages/images/produce/jam_yeast.jpg", caption="Yeast in jam", use_container_width=True)
 
 
     elif category == "Dairy":
@@ -174,7 +177,7 @@ div.stButton > button:hover {
             st.write("- Watch for blue, green, or black spots on cheese, yogurt, or cream")
             st.write("- Cloudiness or separation in milk can indicate bacterial activity")
         with col2:
-            st.image("apps/images/dairy/yogurt_mold.jpeg", caption="Mold growing on yogurt", use_container_width=False, width=350)
+            st.image("pages/images/dairy/yogurt_mold.jpeg", caption="Mold growing on yogurt", use_container_width=False, width=350)
 
     # Smell
         st.markdown("""
@@ -185,7 +188,7 @@ div.stButton > button:hover {
 
         col3, col4 = st.columns(2)
         with col3:
-            st.image("apps/images/dairy/butter_smell.jpg", caption="Moldy butter", use_container_width=False, width=350)
+            st.image("pages/images/dairy/butter_smell.jpg", caption="Moldy butter", use_container_width=False, width=350)
         with col4:
             st.write("- A sour, rancid, or bitter smell is a strong indicator that dairy has gone bad")
             st.write("- Milk and cream typically develop a sharp, acidic odor when spoiled")
@@ -204,7 +207,7 @@ div.stButton > button:hover {
             st.write("- Soft cheeses might become slimy or develop a gritty layer")
             st.write("- Yogurt may appear overly watery on top or feel stringy when stirred")
         with col6:
-            st.image("apps/images/dairy/milk_texture.jpg", caption="Curdled milk", use_container_width=True)
+            st.image("pages/images/dairy/milk_texture.jpg", caption="Curdled milk", use_container_width=True)
 
     # Taste
         st.markdown("""
@@ -215,7 +218,7 @@ div.stButton > button:hover {
 
         col7, col8 = st.columns(2)
         with col7:
-            st.image("apps/images/dairy/cheese_taste.jpg", caption="Moldy cheese", use_container_width=True)
+            st.image("pages/images/dairy/cheese_taste.jpg", caption="Moldy cheese", use_container_width=True)
         with col8:
             st.write("- A sour, metallic, or bitter taste is a strong sign the product has spoiled")
             st.write("- Milk or cream that tastes 'off' should be discarded immediately")
@@ -238,7 +241,7 @@ div.stButton > button:hover {
             st.write("- Mold spots can also form, especially if the meat has been stored improperly or too long")
             st.write("- Fresh meat should be vibrant in color—if it looks strange, it's best to toss it")
         with col2:
-            st.image("apps/images/meat/meat_appearance.jpeg", caption="Discolored meat", use_container_width=True)
+            st.image("pages/images/meat/meat_appearance.jpeg", caption="Discolored meat", use_container_width=True)
 
     # Smell
         st.markdown("""
@@ -249,7 +252,7 @@ div.stButton > button:hover {
 
         col3, col4 = st.columns(2)
         with col3:
-            st.image("apps/images/meat/meat_smell.jpg", caption="Spoiled meat with off smell", use_container_width=True)
+            st.image("pages/images/meat/meat_smell.jpg", caption="Spoiled meat with off smell", use_container_width=True)
         with col4:
             st.write("- A strong, unpleasant odor is often the first and clearest sign of spoiled meat")
             st.write("- The smell may be sour, rotten, or even ammonia-like, depending on the type and stage of spoilage")
@@ -268,7 +271,7 @@ div.stButton > button:hover {
             st.write("- This film often coats the surface and doesn't go away even when rinsed")
             st.write("- Fresh meat should feel firm and slightly moist, not slippery or sticky")
         with col6:
-            st.image("apps/images/meat/meat_texture.jpg", caption="Slimy texture on spoiled chicken", use_container_width=True)
+            st.image("pages/images/meat/meat_texture.jpg", caption="Slimy texture on spoiled chicken", use_container_width=True)
 
     # Taste
         st.markdown("""
@@ -279,7 +282,7 @@ div.stButton > button:hover {
 
         col7, col8 = st.columns(2)
         with col7:
-            st.image("apps/images/meat/meat_taste.jpeg", caption="Spoiled salmon", use_container_width=True)
+            st.image("pages/images/meat/meat_taste.jpeg", caption="Spoiled salmon", use_container_width=True)
         with col8:
             st.write("- Spoiled meat may have a sour, metallic, or off flavor even after cooking")
             st.write("- If you notice an unusual aftertaste or bitterness, stop eating immediately")
@@ -302,7 +305,7 @@ div.stButton > button:hover {
             st.write("- Look for green, white, or black fuzzy patches on the surface")
             st.write("- Discoloration or changes in crust color may also signal aging or contamination")
         with col2:
-            st.image("apps/images/baked_goods/baked_appearance.jpeg", caption="Mold on bread", use_container_width=True)
+            st.image("pages/images/baked_goods/baked_appearance.jpeg", caption="Mold on bread", use_container_width=True)
 
     # Smell Section
         st.markdown("""
@@ -313,7 +316,7 @@ div.stButton > button:hover {
 
         col3, col4 = st.columns(2)
         with col3:
-            st.image("apps/images/baked_goods/baked_smell.jpg", caption="Bacterial growth on baked good", use_container_width=True)
+            st.image("pages/images/baked_goods/baked_smell.jpg", caption="Bacterial growth on baked good", use_container_width=True)
         with col4:
             st.write("- Spoiled baked goods may have a sour, musty, or fermented odor")
             st.write("- Sweet items like cakes may develop an alcoholic smell due to yeast overgrowth")
@@ -332,7 +335,7 @@ div.stButton > button:hover {
             st.write("- Pastries may feel sticky, rubbery, or lose their crispness due to moisture imbalance")
             st.write("- Any sliminess or unexpected softness can indicate mold or staling")
         with col6:
-            st.image("apps/images/baked_goods/baked_texture.jpg", caption="Dry cake", use_container_width=True)
+            st.image("pages/images/baked_goods/baked_texture.jpg", caption="Dry cake", use_container_width=True)
 
     # Taste Section
         st.markdown("""
@@ -343,8 +346,12 @@ div.stButton > button:hover {
 
         col7, col8 = st.columns(2)
         with col7:
-            st.image("apps/images/baked_goods/baked_taste.jpg", caption="Bacterial growth on pie", use_container_width=True)
+            st.image("pages/images/baked_goods/baked_taste.jpg", caption="Bacterial growth on pie", use_container_width=True)
         with col8:
             st.write("- Spoiled baked goods may taste sour, bitter, or have a stale aftertaste")
             st.write("- Sweet treats might lose flavor or take on a sharp, fermented bite")
             st.write("- If the taste is odd or unpleasant, it’s best not to continue eating")
+
+
+if __name__ == "__main__":
+    app()
