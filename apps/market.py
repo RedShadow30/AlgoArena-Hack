@@ -187,7 +187,7 @@ def app():
             )
             st.info(f"Directions for: {st.session_state.selected_address}")
         else:
-            st.image("https://via.placeholder.com/300x250.png?text=Map+Coming+Soon", caption="Route Map", use_container_width=True)
+            st.image("https://via.placeholder.com/300x250.png?text=Map+Coming+Soon", caption="Select an Item from the Market to View Location", use_container_width=True)
 
 if __name__ == "__main__":
     app()
