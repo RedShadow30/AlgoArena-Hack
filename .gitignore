@@ -1,5 +1,6 @@
-__pycache__
-apps/__pycache__
-.streamlit
-venv
-
+__pycache__/
+apps/__pycache__/
+.streamlit/
+venv/
+.venv/
+.DS_Store
