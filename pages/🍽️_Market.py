@@ -12,7 +12,7 @@ st.sidebar.text("Made with ❤️‍🔥 by KindBites Team")
 
 @st.cache_resource
 def init_connection():
-    return pymongo.MongoClient("mongodb+srv://finding:nemo@algoarena-cluster.mzcfclp.mongodb.net/")
+    return pymongo.MongoClient(st.secrets["mongo"]["URI"])
 
 client = init_connection()
 
