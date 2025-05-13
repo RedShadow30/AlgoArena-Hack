@@ -4,9 +4,9 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.embeddings.fastembed import FastEmbedEmbeddings
 from pymongo import MongoClient
-from langchain_community.vectorstores import MongoDBAtlasVectorSearch
+from langchain_mongodb import MongoDBAtlasVectorSearch
 from langchain.prompts import PromptTemplate
-from langchain_community.llms import ollama
+from langchain_ollama import OllamaLLM
 from langchain.chains import RetrievalQA
 
 # Create client and collection for mongo connection
@@ -54,7 +54,7 @@ Provide a concise and accurate response below. If you cannot answer the question
 
 prompt = PromptTemplate(template=custom_prompt_template, input_variables=['context', 'question'])
 
-llm = ollama.Ollama(model="llama2", temperature=0.6)
+llm = OllamaLLM(model="llama2", temperature=0.6)
 qa = RetrievalQA.from_chain_type(
     llm=llm,
     chain_type="stuff",

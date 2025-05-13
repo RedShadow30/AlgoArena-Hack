@@ -9,3 +9,5 @@ streamlit-extras
 streamlit-echarts
 streamlit-charts
 gradio_client
+langchain_ollama
+langchain-mongodb
