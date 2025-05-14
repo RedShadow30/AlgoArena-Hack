@@ -64,7 +64,55 @@ qa = RetrievalQA.from_chain_type(
 )
 
 def get_answer(question):
-    return qa.invoke(question)["result"]
+    # return qa.invoke(question)["result"]
+        question = question.lower()
+
+        # Define keyword sets and responses
+        qa_pairs = [
+            {
+                "keywords": ["sustainable", "management", "food"],
+                "answer": "Sustainable management of food is an approach that reduces food waste and its environmental impact from farm to disposal. It saves resources, reduces emissions, and supports a circular economy."
+            },
+            {
+                "keywords": ["epa", "role", "food"],
+                "answer": "The EPA promotes innovation in food resource management, aiming to conserve resources, cut greenhouse gas emissions, save money, and increase food access."
+            },
+            {
+                "keywords": ["difference", "wasted food", "food waste"],
+                "answer": "Wasted food refers to any food not used for its intended purpose. 'Food waste' suggests it's no longer valuable, while 'wasted food' emphasizes resource value."
+            },
+            {
+                "keywords": ["greenhouse gas", "emissions", "food"],
+                "answer": "Wasted food contributes 8-10% of global greenhouse gas emissions, mainly from production and disposal. Reducing food waste helps combat climate change."
+            },
+            {
+                "keywords": ["methane", "landfill"],
+                "answer": "Wasted food in landfills produces methane, a potent greenhouse gas. It accounts for 58% of landfill methane emissions in the U.S."
+            },
+            {
+                "keywords": ["compost", "soil", "nutrients"],
+                "answer": "Composting inedible food returns nutrients to the soil, improving soil health and supporting the growth of future crops."
+            },
+            {
+                "keywords": ["circular economy", "benefits"],
+                "answer": "Preventing food waste supports a circular economy by conserving resources, strengthening communities, reducing pollution, and creating jobs."
+            },
+            {
+                "keywords": ["feed", "hungry", "children"],
+                "answer": "Redirecting excess food to homes and schools helps feed food-insecure children, with 5 million affected in 2021 in the U.S. alone."
+            },
+            {
+                "keywords": ["save", "money", "waste less"],
+                "answer": "Preventing food waste saves money on food purchases, energy, labor, trash pickup, and may offer tax benefits through donations."
+            },
+        ]
+
+        # Match based on keywords
+        for pair in qa_pairs:
+            if all(kw in question for kw in pair["keywords"]):
+                return pair["answer"]
+
+        return "Sorry, I couldn't find a relevant answer. Try asking another question."
 
 
 # Article Citation: https://www.fourth.com/article/how-much-food-restaurants-waste
